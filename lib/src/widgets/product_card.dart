@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
         children: [
           Image.asset(
             imageUrl,
-            height: 80, 
+            height: 100, 
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 8),
@@ -48,8 +48,8 @@ class ProductCard extends StatelessWidget {
 
   Widget buildBuyButton() {
     return Container(
-      width: 110, 
-      height: 36, 
+      width: 116, 
+      height: 40, 
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
         borderRadius: BorderRadius.circular(20),
