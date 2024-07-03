@@ -24,19 +24,25 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180, 
+      height: 180,
       child: Column(
         children: [
-          Image.asset(
-            imageUrl,
-            height: 100, 
-            fit: BoxFit.cover,
+          Flexible(
+            flex: 2,
+            child: Image.asset(
+              imageUrl,
+              fit: BoxFit.cover,
+            ),
           ),
           const SizedBox(height: 8),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 14, 
+          Flexible(
+            flex: 1,
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14,
+              ),
+              textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(height: 8),
@@ -48,8 +54,8 @@ class ProductCard extends StatelessWidget {
 
   Widget buildBuyButton() {
     return Container(
-      width: 116, 
-      height: 40, 
+      width: 116,
+      height: 40,
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
         borderRadius: BorderRadius.circular(20),
@@ -76,7 +82,7 @@ class ProductCard extends StatelessWidget {
         Text(
           '$count',
           style: const TextStyle(
-            fontSize: 14, 
+            fontSize: 14,
           ),
         ),
         IconButton(
