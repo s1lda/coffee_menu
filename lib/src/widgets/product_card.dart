@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
   final VoidCallback onDecrement;
   final VoidCallback onBuy;
 
-  ProductCard({
+  const ProductCard({
     required this.productId,
     required this.imageUrl,
     required this.title,
@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14, 
             ),
           ),
@@ -75,7 +75,7 @@ class ProductCard extends StatelessWidget {
         ),
         Text(
           '$count',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14, 
           ),
         ),

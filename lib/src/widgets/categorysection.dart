@@ -4,7 +4,7 @@ class CategorySection extends StatelessWidget {
   final List<Widget> items;
   final Key key;
 
-  CategorySection({required this.key, required this.title, required this.items}) : super(key: key);
+  const CategorySection({required this.key, required this.title, required this.items}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
