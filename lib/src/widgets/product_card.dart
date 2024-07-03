@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ProductCard extends StatelessWidget {
   final int productId;
   final String imageUrl;
@@ -19,27 +20,36 @@ class ProductCard extends StatelessWidget {
     required this.onDecrement,
     required this.onBuy,
   });
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(
-          imageUrl,
-          height: 100,
-          fit: BoxFit.cover,
-        ),
-        const SizedBox(height: 8),
-        Text(title),
-        const SizedBox(height: 8),
-        count > 0 ? buildCountControls() : buildBuyButton(),
-      ],
+    return Container(
+      height: 180, 
+      child: Column(
+        children: [
+          Image.asset(
+            imageUrl,
+            height: 80, 
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 14, 
+            ),
+          ),
+          const SizedBox(height: 8),
+          count > 0 ? buildCountControls() : buildBuyButton(),
+        ],
+      ),
     );
   }
 
   Widget buildBuyButton() {
     return Container(
-      width: 116,
-      height: 40, 
+      width: 110, 
+      height: 36, 
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
         borderRadius: BorderRadius.circular(20),
@@ -63,7 +73,12 @@ class ProductCard extends StatelessWidget {
           onPressed: onDecrement,
           color: Colors.lightBlueAccent,
         ),
-        Text('$count'),
+        Text(
+          '$count',
+          style: TextStyle(
+            fontSize: 14, 
+          ),
+        ),
         IconButton(
           icon: const Icon(Icons.add),
           onPressed: onIncrement,
