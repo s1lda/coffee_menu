@@ -49,7 +49,7 @@ class ProductCard extends StatelessWidget {
   Widget buildBuyButton() {
     return Container(
       width: 116, 
-      height: 40, 
+      height: 30, 
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
         borderRadius: BorderRadius.circular(20),
