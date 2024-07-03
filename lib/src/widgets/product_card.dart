@@ -27,16 +27,13 @@ class ProductCard extends StatelessWidget {
       height: 180,
       child: Column(
         children: [
-          Flexible(
-            flex: 2,
-            child: Image.asset(
-              imageUrl,
-              fit: BoxFit.cover,
-            ),
+          Image.asset(
+            imageUrl,
+            height: 100,
+            fit: BoxFit.cover,
           ),
           const SizedBox(height: 8),
           Flexible(
-            flex: 1,
             child: Text(
               title,
               style: const TextStyle(
@@ -46,25 +43,36 @@ class ProductCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          count > 0 ? buildCountControls() : buildBuyButton(),
+          Flexible(
+            child: count > 0 ? buildCountControls() : buildBuyButton(),
+          ),
         ],
       ),
     );
   }
 
   Widget buildBuyButton() {
-    return Container(
-      width: 116,
-      height: 40,
-      decoration: BoxDecoration(
-        color: Colors.lightBlueAccent,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: TextButton(
-        onPressed: onBuy,
-        child: Text(
-          price,
-          style: const TextStyle(color: Colors.white),
+    return Center(
+      child: Container(
+        width: 116,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Colors.lightBlueAccent,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: TextButton(
+          onPressed: onBuy,
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            foregroundColor: Colors.white,
+            textStyle: const TextStyle(color: Colors.white),
+          ),
+          child: Center(
+            child: Text(
+              price,
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
         ),
       ),
     );
