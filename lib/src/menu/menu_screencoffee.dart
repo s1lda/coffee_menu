@@ -132,7 +132,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                     decoration: BoxDecoration(
                       color: isSelected ? CoffeeAppColors.activeCategoryBackground : CoffeeAppColors.categoryBackground,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: isSelected ? CoffeeAppColors.activeCategoryBackground : Colors.grey),
+                      border: Border.all(color: Colors.white),
                     ),
                     margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                     child: Text(
