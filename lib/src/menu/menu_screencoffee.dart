@@ -3,10 +3,12 @@ import 'package:coffee_menu/src/data/data_product.dart';
 import 'package:coffee_menu/src/widgets/categorysection.dart';
 import 'package:coffee_menu/src/widgets/product_card.dart';
 import 'package:coffee_menu/src/theme/app_colors.dart';
+
 class CoffeeHomePage extends StatefulWidget {
   @override
   _CoffeeHomePageState createState() => _CoffeeHomePageState();
 }
+
 class _CoffeeHomePageState extends State<CoffeeHomePage> {
   final ScrollController _scrollController = ScrollController();
   final ScrollController _categoryScrollController = ScrollController();
@@ -16,7 +18,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
   bool _isScrollingToCategory = false;
 
   @override
-   void initState() {
+  void initState() {
     super.initState();
     _scrollController.addListener(_onScroll);
   }
@@ -117,7 +119,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
         children: [
           Container(
             height: 50,
-            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top), 
+            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
             child: ListView.builder(
               controller: _categoryScrollController,
               scrollDirection: Axis.horizontal,

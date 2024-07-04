@@ -23,30 +23,34 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 180,
-      child: Column(
-        children: [
-          Image.asset(
-            imageUrl,
-            height: 100,
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(height: 8),
-          Flexible(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-              ),
-              textAlign: TextAlign.center,
+    return Padding(
+      padding: const EdgeInsets.all(8.0), 
+      child: Container(
+        height: 180,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imageUrl,
+              height: 100,
+              fit: BoxFit.cover,
             ),
-          ),
-          const SizedBox(height: 8),
-          Flexible(
-            child: count > 0 ? buildCountControls() : buildBuyButton(),
-          ),
-        ],
+            const SizedBox(height: 8),
+            Flexible(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Flexible(
+              child: count > 0 ? buildCountControls() : buildBuyButton(),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -85,9 +89,11 @@ class ProductCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: const Icon(Icons.remove),
+            icon: const Icon(Icons.remove, size: 20),
             onPressed: onDecrement,
             color: Colors.lightBlueAccent,
+            padding: const EdgeInsets.all(0),
+            constraints:const BoxConstraints(),
           ),
           Container(
             width: 40,
@@ -97,12 +103,15 @@ class ProductCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 14,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.add, size: 24),
             onPressed: onIncrement,
             color: Colors.lightBlueAccent,
+            padding: const EdgeInsets.all(0),
+            constraints: const BoxConstraints(),
           ),
         ],
       ),

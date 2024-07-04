@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CategorySection extends StatelessWidget {
   final String title;
   final List<Widget> items;
@@ -19,13 +20,19 @@ class CategorySection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 16,
+        GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            childAspectRatio: 0.75,
+          ),
+          itemCount: items.length,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          children: items,
+          itemBuilder: (context, index) {
+            return items[index];
+          },
         ),
       ],
     );
