@@ -117,7 +117,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
         children: [
           Container(
             height: 50,
-            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top), // Добавление отступа сверху
+            margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top), 
             child: ListView.builder(
               controller: _categoryScrollController,
               scrollDirection: Axis.horizontal,
@@ -152,7 +152,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
             child: SingleChildScrollView(
               controller: _scrollController,
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

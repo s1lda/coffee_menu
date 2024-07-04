@@ -79,26 +79,33 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget buildCountControls() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.remove),
-          onPressed: onDecrement,
-          color: Colors.lightBlueAccent,
-        ),
-        Text(
-          '$count',
-          style: const TextStyle(
-            fontSize: 14,
+    return Container(
+      height: 40,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.remove),
+            onPressed: onDecrement,
+            color: Colors.lightBlueAccent,
           ),
-        ),
-        IconButton(
-          icon: const Icon(Icons.add),
-          onPressed: onIncrement,
-          color: Colors.lightBlueAccent,
-        ),
-      ],
+          Container(
+            width: 40,
+            alignment: Alignment.center,
+            child: Text(
+              '$count',
+              style: const TextStyle(
+                fontSize: 14,
+              ),
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: onIncrement,
+            color: Colors.lightBlueAccent,
+          ),
+        ],
+      ),
     );
   }
 }
