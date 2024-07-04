@@ -172,7 +172,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                         onBuy: () => _addToCart(product.id),
                       )).toList(),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 8),
                     CategorySection(
                       key: categoryKeys[1],
                       title: 'Кофе с молоком',
@@ -187,7 +187,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                         onBuy: () => _addToCart(product.id),
                       )).toList(),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 8),
                     CategorySection(
                       key: categoryKeys[2],
                       title: 'Чай',
@@ -202,7 +202,7 @@ class _CoffeeHomePageState extends State<CoffeeHomePage> {
                         onBuy: () => _addToCart(product.id),
                       )).toList(),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 8),
                     CategorySection(
                       key: categoryKeys[3],
                       title: 'Авторские напитки',
