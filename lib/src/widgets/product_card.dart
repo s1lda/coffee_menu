@@ -24,9 +24,13 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0), 
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         height: 180,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,18 +40,24 @@ class ProductCard extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 8),
-            Flexible(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 14,
-                ),
-                textAlign: TextAlign.center,
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14,
               ),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
-            Flexible(
-              child: count > 0 ? buildCountControls() : buildBuyButton(),
+            SizedBox(
+              height: 40,
+              width: 116,
+              child: IndexedStack(
+                index: count > 0 ? 1 : 0,
+                children: [
+                  buildBuyButton(),
+                  buildCountControls(),
+                ],
+              ),
             ),
           ],
         ),
@@ -56,26 +66,21 @@ class ProductCard extends StatelessWidget {
   }
 
   Widget buildBuyButton() {
-    return Center(
-      child: Container(
-        width: 116,
-        height: 40,
-        decoration: BoxDecoration(
-          color: Colors.lightBlueAccent,
-          borderRadius: BorderRadius.circular(20),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.lightBlueAccent,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextButton(
+        onPressed: onBuy,
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          foregroundColor: Colors.white,
         ),
-        child: TextButton(
-          onPressed: onBuy,
-          style: TextButton.styleFrom(
-            padding: EdgeInsets.zero,
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(color: Colors.white),
-          ),
-          child: Center(
-            child: Text(
-              price,
-              style: const TextStyle(color: Colors.white),
-            ),
+        child: Center(
+          child: Text(
+            price,
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ),
@@ -84,7 +89,9 @@ class ProductCard extends StatelessWidget {
 
   Widget buildCountControls() {
     return Container(
-      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -93,7 +100,7 @@ class ProductCard extends StatelessWidget {
             onPressed: onDecrement,
             color: Colors.lightBlueAccent,
             padding: const EdgeInsets.all(0),
-            constraints:const BoxConstraints(),
+            constraints: const BoxConstraints(),
           ),
           Container(
             width: 40,
