@@ -25,7 +25,7 @@ class CategorySection extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
-            childAspectRatio: 0.75,
+            childAspectRatio: 0.65,
           ),
           itemCount: items.length,
           shrinkWrap: true,
